@@ -1,0 +1,21 @@
+# use mod_rewrite for pretty URL support
+RewriteEngine on
+#RewriteCond %{HTTPS} off
+#RewriteCond %{HTTPS} off
+
+#
+#
+#RewriteCond %{REQUEST_URI} http://web.extremefitness.ru/ajax/ajax-login-app
+#RewriteRule . index.php
+#
+#RewriteRule (([^orders]).*) http://helper.express/$1 [R=301,L]
+
+
+#RewriteRule (([^ajax-login-app]).*) https://web.extremefitness.ru/$1 [R=301,L]
+
+# if a directory or a file exists, use the request directly
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# otherwise forward the request to my.php
+RewriteRule . index.php
